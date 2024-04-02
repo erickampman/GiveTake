@@ -34,6 +34,7 @@
 		E4FF90A42BBC5547003C8364 /* GiveTakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiveTakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4FF90A62BBC5547003C8364 /* GiveTakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveTakeTests.swift; sourceTree = "<group>"; };
 		E4FF90AC2BBC5CBA003C8364 /* GTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTManager.swift; sourceTree = "<group>"; };
+		E4FF90B12BBC8A5A003C8364 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +58,7 @@
 		E4FF90892BBC4B86003C8364 = {
 			isa = PBXGroup;
 			children = (
+				E4FF90B12BBC8A5A003C8364 /* Readme.md */,
 				E4FF90942BBC4B86003C8364 /* GiveTake */,
 				E4FF90A52BBC5547003C8364 /* GiveTakeTests */,
 				E4FF90932BBC4B86003C8364 /* Products */,
