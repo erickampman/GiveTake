@@ -50,4 +50,8 @@ class GTManager<K: Hashable, V: Available> {
 		
 		return ret
 	}
+	
+	public func deleteMatchingItems(_ id: K, type: GTRecordType, closure: (V) -> Bool) {
+		gtActors[type.rawValue][id]?.removeItems(closure: closure)
+	}
 }

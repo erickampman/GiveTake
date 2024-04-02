@@ -76,6 +76,38 @@ final class GiveTakeTests: XCTestCase {
 		
 		XCTAssert(items != nil && items!.count == 2)
 	}
+	
+	func testRemoveItems() throws {
+		let gtManager = GTManager<String,BorrowableItem>()
+
+		gtManager.addGTActor(giverBB, type: .give)
+		
+		let count = gtManager.getGTActorCount(type: .give)
+		XCTAssert(count == 1)
+		let cymbal = BorrowableItem(available: .available, id: "Cymbal")
+		let tomTom = BorrowableItem(available: .available, id: "Tom Tom")
+		let tomTomTom = BorrowableItem(available: .available, id: "Tom Tom Tom")
+
+		gtManager.appendGTActorItem(giverBB, type: .give, item: cymbal)
+		gtManager.appendGTActorItem(giverBB, type: .give, item: tomTom)
+		gtManager.appendGTActorItem(giverBB, type: .give, item: tomTomTom)
+
+		var items = gtManager.getGTActorItems(giverBB, type: .give)
+		
+		XCTAssert(items != nil && items!.count == 3)
+		
+		// new code here:
+		
+		gtManager.deleteMatchingItems(giverBB, type: .give) { item in
+			let item = item as BorrowableItem
+			return item.id.contains("Tom")
+		}
+		
+		items = gtManager.getGTActorItems(giverBB, type: .give)
+
+		XCTAssert(items != nil && items!.count == 1)
+	}
+	
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
